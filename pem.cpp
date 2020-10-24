@@ -1,5 +1,10 @@
 #include "stdafx.h"
 
+inline ULONG BOOL_TO_ERROR(BOOL f)
+{
+	return f ? NOERROR : GetLastError();
+}
+
 NTSTATUS openssl_verify(_In_ BCRYPT_KEY_HANDLE hKey,
 						_In_ PCUCHAR pbToBeSigned, 
 						_In_ ULONG cbToBeSigned,
