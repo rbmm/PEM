@@ -162,7 +162,7 @@ void DoLegacyTest(_In_ PCSTR szToBeSigned,
 						{
 							pbSignature = (PUCHAR)alloca(cbSignature >>= 3);
 
-							fOk = CryptSignHashA(hHash, dwKeySpec, 0, 0, pbSignature, &cbSignature);
+							fOk = CryptSignHashW(hHash, dwKeySpec, 0, 0, pbSignature, &cbSignature);
 						}
 					}
 
@@ -173,7 +173,7 @@ void DoLegacyTest(_In_ PCSTR szToBeSigned,
 				{
 					if (NOERROR == CryptImportKey(&hKey, hProv, bCert ? bt_cert : bt_pub, szPublicKeyOrCert, cchPublicKeyOrCert))
 					{
-						if (!CryptVerifySignatureA(hHash, pbSignature, cbSignature, hKey, 0, 0))
+						if (!CryptVerifySignatureW(hHash, pbSignature, cbSignature, hKey, 0, 0))
 						{
 							__debugbreak();
 						}
