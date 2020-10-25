@@ -159,7 +159,7 @@ HRESULT BCryptImportPrivateKey(_Out_ BCRYPT_KEY_HANDLE *phKey, _In_ PCUCHAR pbKe
 	return HRESULT_FROM_WIN32(dwError);
 }
 
-HRESULT BCryptImportPublicKey(_Out_ BCRYPT_KEY_HANDLE *phKey, _In_ PCUCHAR pbKeyOrCert, _In_ ULONG cbKeyOrCert, bool bCert)
+HRESULT BCryptImportPublicKey(_Out_ BCRYPT_KEY_HANDLE *phKey, _In_ PCUCHAR pbKeyOrCert, _In_ ULONG cbKeyOrCert, _In_ bool bCert)
 {
 	ULONG cb;
 
